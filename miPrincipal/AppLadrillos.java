@@ -8,13 +8,15 @@ public class AppLadrillos {
         }
         */
         //(Solución recursiva)
-        drawWall();
+        int n=10;
+        drawWall(n);
     }
-    public static void drawWall(){
-        drawWall();
-        System.out.println("Ladrillos");
+    public static void drawWall(int n){
+        if(n-1>0)
+        drawWall(n-1);
+        System.out.println("Ladrillos "+n);
     }
     public static void drawLine(){
-       
+        System.out.println("Ladrillos");
     }
 }
