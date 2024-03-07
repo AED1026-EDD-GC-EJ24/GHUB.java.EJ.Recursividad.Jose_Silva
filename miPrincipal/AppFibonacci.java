@@ -1,5 +1,6 @@
 package miPrincipal;
 
+import java.util.Hashtable;
 import java.util.Scanner;
 
 public class AppFibonacci {
@@ -11,7 +12,7 @@ public class AppFibonacci {
         Scanner sc=new Scanner(System.in);
         System.out.println("Ingrese un valor: ");
         int n=sc.nextInt();
-
+        double Cont=0;
         //Invocación de metodo iterativo
         double f =fibonacciIte(n);
 
@@ -32,5 +33,18 @@ public class AppFibonacci {
             f=fibonacciRec(n-1)+fibonacciRec(n-2);
         }
         return f;
+    }
+    static long setContador(double x){
+        return cont;}
+    static double fibonacciRecOptimizado(int x,Hashtable<Integer,Double>t){
+        //Primero verificamos si el resultado está en la tabla.
+        Double d=t.get(x);
+        //Si no estaba entonces calculamos y lo ingresamos a la tabla.
+        if (d==null) {
+            d=fibonacciRecOptimizado(x-1,t)+fibonacciRecOptimizado(x-2, t);
+            t.put(x, d);
+        }
+        //Retorna valor
+        return d;
     }
 }
